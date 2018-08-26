@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>react clock</title>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  const root = document.getElementById('root');
+  
+  function appClock () {
+    const d = new Date();
+    const hour = d.getHours();
+    const min = d.getMinutes();
+    const sec = d.getSeconds();
+    const elm = <div>{hour}:{min}:{sec}</div>;
+    
+    ReactDOM.render(elm, root);
+  }
+  
+  setInterval(appClock, 1000);
+</script>
+</body>
+</html>
